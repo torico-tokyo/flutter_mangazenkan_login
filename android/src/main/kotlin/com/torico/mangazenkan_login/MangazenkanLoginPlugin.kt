@@ -17,7 +17,7 @@ import io.flutter.plugin.common.PluginRegistry.Registrar
 import io.flutter.plugin.common.PluginRegistry.NewIntentListener
 
 /** MangazenkanLoginPlugin */
-public class MangazenkanLoginPlugin:  FlutterPlugin, MethodCallHandler, ActivityAware, NewIntentListener {
+public class  MangazenkanLoginPlugin:  FlutterPlugin, MethodCallHandler, ActivityAware, NewIntentListener {
   /// The MethodChannel that will the communication between Flutter and native Android
   ///
   /// This local reference serves to register the plugin with the Flutter Engine and unregister it

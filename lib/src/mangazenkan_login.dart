@@ -114,11 +114,12 @@ class MangazenkanLogin {
       'redirect_uri': redirectURI,
       'response_type': responseType.join(',')
     };
-    final sb = StringBuffer('?');
+    final sb = StringBuffer('');
     params.forEach((key, value) {
-      sb.write('&${key}=${value}');
+      sb.write('$key=$value&');
     });
-    final query = Uri.encodeQueryComponent(sb.toString());
+    final query = Uri.encodeQueryComponent(
+        '?${sb.toString().substring(0, sb.length - 1)}');
     return 'https://login.mangazenkan.com/login/?next=/o/authorize/$query';
   }
 }
