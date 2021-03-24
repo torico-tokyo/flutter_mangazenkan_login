@@ -27,12 +27,9 @@ class MangazenkanLogin {
   // ResponseType
   final List<String> responseType;
 
-  static const MethodChannel _methodChannel =
-      const MethodChannel('mangazenkan_login');
-  static const EventChannel _eventChannel =
-      const EventChannel('mangazenkan_login/event');
-  static final Stream<dynamic> _eventStream =
-      _eventChannel.receiveBroadcastStream();
+  static const MethodChannel _methodChannel = const MethodChannel('mangazenkan_login');
+  static const EventChannel _eventChannel = const EventChannel('mangazenkan_login/event');
+  static final Stream<dynamic> _eventStream = _eventChannel.receiveBroadcastStream();
 
   MangazenkanLogin({
     this.clientId,
@@ -64,7 +61,7 @@ class MangazenkanLogin {
             completer.complete(null);
           }
         });
-        await browser.open(url: authorizeURI.toString());
+        await browser.open(url: Uri.parse(authorizeURI.toString()));
         resultURI = await completer.future;
         subscribe.cancel();
       } else {
